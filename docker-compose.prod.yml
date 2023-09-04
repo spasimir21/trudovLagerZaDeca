@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  lager-neo4j:
+    image: neo4j:4.4.4-community
+    volumes:
+      - ./data/neo4j:/data
+  lager-nginx:
+    build:
+      context: ./
+      dockerfile: ./containers/nginx/nginx.prod.dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - lager-auth
+  lager-auth:
+    build:
+      context: ./backend
+      dockerfile: ${PWD:-..}/containers/auth.prod.dockerfile
+    depends_on:
+      - lager-neo4j

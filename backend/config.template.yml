@@ -1,0 +1,12 @@
+database:
+  url: bolt://lager-neo4j:7687
+  user: neo4j
+  password: PASSWORD
+
+token:
+  secret: SECRET
+  token_lifetime: 4h
+
+auth:
+  refresh_token_length: 32
+  salt_rounds: 10

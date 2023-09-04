@@ -1,0 +1,30 @@
+{
+  "name": "garden-client",
+  "version": "1.0.0",
+  "description": "",
+  "source": "./src/index.html",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "@types/react": "^18.2.21",
+    "parcel": "^2.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spasimir21/trudovLagerZaDeca.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spasimir21/trudovLagerZaDeca/issues"
+  },
+  "homepage": "https://github.com/spasimir21/trudovLagerZaDeca#readme",
+  "author": "Petuk",
+  "license": "MIT"
+}
