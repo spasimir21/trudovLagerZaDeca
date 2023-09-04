@@ -4,6 +4,7 @@
   "description": "",
   "source": "./src/index.html",
   "scripts": {
+    "serve": "parcel",
     "watch": "parcel watch",
     "build": "parcel build"
   },
