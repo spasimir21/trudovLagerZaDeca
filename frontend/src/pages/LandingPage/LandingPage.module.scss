@@ -1,0 +1,296 @@
+.introVideo {
+  background-color: #949494;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 54px;
+}
+
+.title {
+  color: #000;
+  font-family: Jost;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 73.5px;
+  max-width: 683px;
+  margin: 0px;
+}
+
+.landingPage .button {
+  display: block;
+  margin: 0px;
+  width: fit-content;
+  color: #fff;
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  padding: 7px 32px;
+}
+
+.mission {
+  padding: 50px 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 100px;
+}
+
+p {
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+  margin: 0px;
+}
+
+blockquote {
+  position: relative;
+  width: 820px;
+  color: #000;
+  font-family: Jost;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: center;
+}
+
+blockquote:after {
+  display: block;
+  padding-left: 10px;
+  content: '\201C';
+  font-size: 100px;
+  position: absolute;
+  left: -70px;
+  top: -50px;
+  color: #d9d9d9;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: '\201C';
+  font-size: 100px;
+  position: absolute;
+  right: -55px;
+  bottom: -40px;
+  color: #d9d9d9;
+  transform: rotate(180deg);
+}
+
+.testimony {
+  padding: 50px 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 69px;
+}
+
+.testimonies {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 32px;
+}
+
+.testimonyRect {
+  background-color: #d9d9d9;
+  aspect-ratio: 1.6;
+  flex-grow: 1;
+}
+
+.facku {
+  height: 682px;
+  padding: 50px 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 57px;
+}
+
+.fackQ {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0px;
+}
+
+.question {
+  border-left: 5px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 36px;
+  align-items: center;
+  padding-left: 14px;
+}
+
+.question:before {
+  content: 'В.';
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+}
+
+.question p {
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.answer {
+  border-left: 5px solid #625f5f;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 36px;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.answer:before {
+  content: 'O.';
+  font-family: Jost;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+  color: #625f5f;
+}
+
+.answer p {
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #625f5f;
+}
+
+.motto {
+  padding-top: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 57px;
+}
+
+.motto p {
+  padding-left: 80px;
+}
+
+.mottoContainer {
+  width: 100%;
+  height: 224px;
+  background-color: #1d1a1a;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+}
+
+.baba {
+  width: 344px;
+  height: 394px;
+  background-color: #605a5a;
+  position: absolute;
+  bottom: 0px;
+  right: 141px;
+}
+
+.mottoContainer p {
+  color: #fff;
+  font-family: Jost;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+  position: relative;
+  right: 530px;
+}
+
+.partners {
+  padding-top: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 57px;
+}
+
+.partners p {
+  padding-left: 80px;
+}
+
+.partnerList {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.partner {
+  width: 179px;
+  height: 92px;
+  background-color: #503f3f;
+}
+
+.partners .button {
+  align-self: center;
+  padding-left: 32px;
+  margin-top: 20px;
+}
+
+.footer {
+  margin-top: 69px;
+  padding-top: 29px;
+  background-color: #d9d9d9;
+  height: 233px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.footerSection {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 18px;
+}
+
+.footerLogo {
+  width: 126px;
+  height: 62px;
+  background-color: #656262;
+  align-self: center;
+}
+
+.footer p {
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.block {
+  background-color: #503f3f;
+  aspect-ratio: 1;
+  width: 20px;
+}
+
+.socials {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 40px;
+}

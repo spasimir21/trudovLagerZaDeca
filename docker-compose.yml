@@ -19,10 +19,20 @@ services:
       - ./frontend/dist:/usr/share/nginx/html
     depends_on:
       - lager-auth
+      - lager-wiki
   lager-auth:
     build:
       context: ./backend
       dockerfile: ${PWD:-..}/containers/auth.dockerfile
+    volumes:
+      - ./backend/dist:/lager/dist
+      - ./backend/config.yml:/lager/config.yml
+    depends_on:
+      - lager-neo4j
+  lager-wiki:
+    build:
+      context: ./backend
+      dockerfile: ${PWD:-..}/containers/wiki.dockerfile
     volumes:
       - ./backend/dist:/lager/dist
       - ./backend/config.yml:/lager/config.yml

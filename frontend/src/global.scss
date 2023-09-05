@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
 html,
 body {
   margin: 0px;
+  overflow-x: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  min-height: 100vh;
 }

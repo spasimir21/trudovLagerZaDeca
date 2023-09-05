@@ -1,6 +1,7 @@
 # Lager
 config.yml
 /data
+/frontend/.parcel-cache
 
 # Logs
 logs

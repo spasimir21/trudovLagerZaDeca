@@ -1,17 +1,22 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
 import { LandingPage } from './pages/LandingPage/LandingPage';
-import React, { useEffect } from 'react';
+import { APIContext, loadAPIState } from './api/apiState';
+import { Header } from './components/Header/Header';
+import { APITest } from './pages/APITest/APITest';
+import { Route, Routes } from 'react-router-dom';
+import React from 'react';
 import './global.scss';
 
+const apiState = loadAPIState();
+
 function App() {
-  const navigate = useNavigate();
-
-  useEffect(() => {}, []);
-
   return (
-    <Routes>
-      <Route path='/' element={<LandingPage />} />
-    </Routes>
+    <APIContext.Provider value={apiState}>
+      {/* <Header /> */}
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/api' element={<APITest />} />
+      </Routes>
+    </APIContext.Provider>
   );
 }
 

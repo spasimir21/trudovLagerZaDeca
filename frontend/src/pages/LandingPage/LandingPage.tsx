@@ -1,8 +1,110 @@
-import './LandingPage.scss';
+// @ts-ignore
+import * as classes from './LandingPage.module.scss';
 import React from 'react';
 
 function LandingPage() {
-  return <h1>Hello, world!</h1>;
+  return (
+    <div className={'page ' + classes.landingPage}>
+      <div className={classes.introVideo}>
+        <div className={classes.overlay}>
+          <p className={classes.title}>Елате на лагер и отгледайте собствена реколта в Девин</p>
+          <p className={classes.button}>Запиши се</p>
+        </div>
+      </div>
+      <div className={classes.mission}>
+        <p>Нашата мисия</p>
+        <blockquote>
+          Забавлението, комбинирано със здравословната храна и нови знания, е всичко, от което децата имат нужда!
+        </blockquote>
+      </div>
+      <div className={classes.testimony}>
+        <p>Хора, посетили лагера споделят ...</p>
+        <div className={classes.testimonies}>
+          <div className={classes.testimonyRect}></div>
+          <div className={classes.testimonyRect}></div>
+        </div>
+      </div>
+      <div className={classes.facku}>
+        <p>Вие питате - ние отговаряме</p>
+        <div className={classes.fackQ}>
+          <div className={classes.question}>
+            <p>Каква е продължителността на един лагер?</p>
+          </div>
+          <div className={classes.answer}>
+            <p>Всеки лагер се провежда в рамките на една седмица през месеците май, юни, юли и август</p>
+          </div>
+        </div>
+        <div className={classes.fackQ}>
+          <div className={classes.question}>
+            <p>Какви умения трябва да притежава детето, за да се запише за лагера?</p>
+          </div>
+          <div className={classes.answer}>
+            <p>Не се изискват специални умения, а детето да е жизнерадостно и готово за нови преживявания.</p>
+          </div>
+        </div>
+        <div className={classes.fackQ}>
+          <div className={classes.question}>
+            <p>Кои са хората, които ще се грижат за децата?</p>
+          </div>
+          <div className={classes.answer}>
+            <p>
+              Подбран екип експерти в сферата на работата с деца ще се грижат за тяхното преживяване, а нашите експертни фермери
+              ще се грижат за поддържането на реколтата между различните фази на лагера
+            </p>
+          </div>
+        </div>
+        <div className={classes.fackQ}>
+          <div className={classes.question}>
+            <p>Какви активности ще се провеждат на лагера?</p>
+          </div>
+          <div className={classes.answer}>
+            <p>Децата ще се забавляват с редица образователни и развлекателни активности, част от които може да видите тук</p>
+          </div>
+        </div>
+      </div>
+      <div className={classes.motto}>
+        <p>Нашето мото</p>
+        <div className={classes.mottoContainer}>
+          <p>Баба знае най-добре!</p>
+          <div className={classes.baba}></div>
+        </div>
+      </div>
+      <div className={classes.partners}>
+        <p>Партньори</p>
+        <div className={classes.partnerList}>
+          <div className={classes.partner}></div>
+          <div className={classes.partner}></div>
+          <div className={classes.partner}></div>
+          <div className={classes.partner}></div>
+          <div className={classes.partner}></div>
+        </div>
+        <p className={classes.button}>Запиши се</p>
+      </div>
+      <div className={classes.footer}>
+        <div className={classes.footerSection}>
+          <div className={classes.footerLogo}></div>
+          <p>Баба знае най-добре!</p>
+        </div>
+        <div className={classes.footerSection}>
+          <p>
+            Имате въпроси?
+            <br />
+            Свържете се с нас!
+          </p>
+          <div className={classes.block}></div>
+          <div className={classes.block}></div>
+        </div>
+        <div className={classes.footerSection}>
+          <p>Социални мрежи</p>
+          <div className={classes.socials}>
+            <div className={classes.block}></div>
+            <div className={classes.block}></div>
+            <div className={classes.block}></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export { LandingPage };

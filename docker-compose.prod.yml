@@ -13,9 +13,16 @@ services:
       - 80:80
     depends_on:
       - lager-auth
+      - lager-wiki
   lager-auth:
     build:
       context: ./backend
       dockerfile: ${PWD:-..}/containers/auth.prod.dockerfile
+    depends_on:
+      - lager-neo4j
+  lager-wiki:
+    build:
+      context: ./backend
+      dockerfile: ${PWD:-..}/containers/wiki.prod.dockerfile
     depends_on:
       - lager-neo4j
