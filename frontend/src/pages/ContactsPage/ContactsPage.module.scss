@@ -3,3 +3,18 @@
   height: 100vh;
   background-color: gray;
 }
+
+.youCanFindUsHereContainer{
+  padding: 10px;
+  border: solid 1px black
+}
+
+.teamCardsContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr; 
+  grid-template-columns: repeat(4, 1fr); /* Four columns with equal width */
+  gap: 30px;
+  margin:60px;
+  margin-bottom:120px;
+}
+
