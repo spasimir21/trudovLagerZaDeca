@@ -3,14 +3,14 @@
   top: 0px;
   left: 0px;
   width: 100vw;
-  height: 96px;
+  height: var(--header-height);
   display: grid;
   place-items: center;
   z-index: 1000;
 }
 
 .header.full {
-  background-color: #949494;
+  background-color: #3a3a3a;
 }
 
 .header.full .line {
@@ -51,7 +51,7 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
-  border-bottom: 1px solid white;
+  // border-bottom: 1px solid white;
   width: 60vw;
   transform: translate(calc(50vw - 50%), 0);
 }

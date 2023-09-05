@@ -1,0 +1,144 @@
+.titleContainer {
+  width: 100%;
+  height: 170px;
+  background-color: #d9d9d9;
+  display: grid;
+  place-items: center;
+}
+
+.titleContainer p {
+  font-family: Jost;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 73.5px;
+}
+
+.profileInfo {
+  width: 100%;
+  margin-top: 46px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  // padding-left: 137px;
+  justify-content: center;
+  gap: 69px;
+}
+
+.verticalLine {
+  width: 0px;
+  height: 308px;
+  border: 1px solid #a7a7a7;
+}
+
+.avatarContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar {
+  width: 173px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.name {
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+}
+
+.logoutButton {
+  padding: 2px 14px;
+  border-radius: 8px;
+  border: 1px solid #a60000;
+  color: #000;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.infoContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.infoContainer p {
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+  margin: 0px;
+}
+
+.gender {
+  width: 44px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.genderContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.mapSection {
+  margin-top: 96px;
+  margin-bottom: 80px;
+  padding: 0px 80px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+}
+
+.mapSection > p {
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 51.776px;
+}
+
+.hintContainer {
+  display: flex;
+  gap: 16px;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.hintIcon {
+  width: 44px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.hintContainer > p {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: black;
+}
+
+.map {
+  width: calc(100vw - 160px);
+  align-self: stretch;
+  aspect-ratio: 2;
+  background-color: #d9d9d9;
+  margin-top: 10px;
+}

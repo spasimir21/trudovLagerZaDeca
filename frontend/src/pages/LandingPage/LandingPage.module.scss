@@ -226,6 +226,7 @@ blockquote:before {
   display: flex;
   flex-flow: column nowrap;
   gap: 57px;
+  margin-bottom: 69px;
 }
 
 .partners p {
@@ -249,48 +250,4 @@ blockquote:before {
   align-self: center;
   padding-left: 32px;
   margin-top: 20px;
-}
-
-.footer {
-  margin-top: 69px;
-  padding-top: 29px;
-  background-color: #d9d9d9;
-  height: 233px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-}
-
-.footerSection {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 18px;
-}
-
-.footerLogo {
-  width: 126px;
-  height: 62px;
-  background-color: #656262;
-  align-self: center;
-}
-
-.footer p {
-  font-family: Jost;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-}
-
-.block {
-  background-color: #503f3f;
-  aspect-ratio: 1;
-  width: 20px;
-}
-
-.socials {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 40px;
 }
