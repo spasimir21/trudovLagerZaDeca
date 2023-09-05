@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica&family=Jost&family=Raleway&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --header-height: 96px;
 }
