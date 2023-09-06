@@ -4,9 +4,12 @@ import { RequestFactory } from './useRequest';
 type RegisterRequestResult = [string, string];
 
 interface RegisterRequestArgs {
+  fullname: string;
   email: string;
-  username: string;
   password: string;
+  phoneNumber: string;
+  dateOfBirth: number;
+  isMale: boolean;
 }
 
 interface RegisterRequestError {

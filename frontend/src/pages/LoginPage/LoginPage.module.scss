@@ -8,7 +8,7 @@
 }
 
 .loginForm {
-  background-color: #d9d9d9;
+  background-color: var(--light-green);
   height: calc(100% - 150px);
   border-radius: 8px;
   aspect-ratio: 1;
@@ -16,19 +16,22 @@
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 40px;
   padding-bottom: 25px;
   // padding: 0px 75px;
 }
 
 .loginContainer .loginTitle {
-  font-family: Jost;
-  font-size: 64px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 48px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 73.5px;
   margin: 0px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .field {
@@ -41,11 +44,11 @@
 }
 
 .loginContainer p {
-  font-family: Jost;
+  font-family: Raleway;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 130%;
   margin: 0px;
 }
 
@@ -55,16 +58,17 @@
   padding: 16px 8px;
   border-radius: 8px;
   background: #efefef;
-  font-family: Jost;
+  font-family: Raleway;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 100%;
-  color: #767676;
+  line-height: 130%;
+  // color: #767676;
   width: 100%;
 }
 
 .buttons {
+  margin-top: 20px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -72,14 +76,19 @@
 }
 
 .button {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
   border-radius: 8px;
   padding: 12px 32px;
   color: white;
-  background-color: #3b3333;
+  background-color: var(--dark-green);
 }
 
 .accentButton {
-  border: 1px solid #585555;
+  border: 1px solid var(--dark-green);
   color: black !important;
   background-color: transparent !important;
 }

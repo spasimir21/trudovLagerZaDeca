@@ -1,20 +1,18 @@
-
-
 .profileInfo {
   width: 100%;
   margin-top: 46px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  // padding-left: 137px;
-  justify-content: center;
+  padding-left: 141px;
+  justify-content: start;
   gap: 69px;
 }
 
 .verticalLine {
   width: 0px;
   height: 308px;
-  border: 1px solid #a7a7a7;
+  border-left: 3px solid #a7a7a7;
 }
 
 .avatarContainer {
@@ -32,23 +30,24 @@
 }
 
 .name {
+  color: var(--dark-green);
   font-family: Geologica;
-  font-size: 32px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 51.776px;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .logoutButton {
   padding: 2px 14px;
   border-radius: 8px;
-  border: 1px solid #a60000;
+  border: 1px solid var(--orange);
   color: #000;
-  font-family: Jost;
+  font-family: Raleway;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 130%;
 }
 
 .infoContainer {
@@ -58,16 +57,17 @@
 }
 
 .infoContainer p {
+  color: var(--dark-green);
   font-family: Geologica;
-  font-size: 32px;
+  font-size: 18px;
   font-style: normal;
-  font-weight: 400;
-  line-height: 51.776px;
+  font-weight: 300;
+  line-height: 130%;
   margin: 0px;
 }
 
 .gender {
-  width: 44px;
+  width: 30px;
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: #d9d9d9;
@@ -80,51 +80,13 @@
   gap: 15px;
 }
 
-.mapSection {
-  margin-top: 96px;
-  margin-bottom: 80px;
-  padding: 0px 80px;
-  width: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 20px;
-}
-
-.mapSection > p {
+.sectionTitle {
+  color: #000;
+  margin: 55px 80px;
   font-family: Geologica;
   font-size: 32px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 51.776px;
-}
-
-.hintContainer {
-  display: flex;
-  gap: 16px;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-
-.hintIcon {
-  width: 44px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-}
-
-.hintContainer > p {
-  font-family: Raleway;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 130%;
-  color: black;
-}
-
-.map {
-  width: calc(100vw - 160px);
-  align-self: stretch;
-  aspect-ratio: 2;
-  background-color: #d9d9d9;
-  margin-top: 10px;
+  border-bottom: 7px solid var(--orange);
 }

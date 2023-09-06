@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 function useValueRef<T>(defaultValue: T) {
+  const ref = useMemo(() => ({ value: defaultValue }), []);
   const [refresh, setRefresh] = useState(false);
-  let value = defaultValue;
 
   return {
     get value() {
-      return value;
+      return ref.value;
     },
     set value(newValue: T) {
-      value = newValue;
+      ref.value = newValue;
       setRefresh(!refresh);
     }
   };

@@ -1,9 +1,54 @@
+import { APIStateContext, getTokenDataReducer, loginAction } from '../../state/apiState';
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
+import { RegisterRequest } from '../../api/RegisterRequest';
+import { useAction, useReducer } from '../../utils/state';
 // @ts-ignore
 import * as classes from './RegisterPage.module.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRequest } from '../../api/useRequest';
+import { useNavigate } from 'react-router-dom';
+
+function formatNumber(number: number, length: number) {
+  const str = number.toString();
+  return '0'.repeat(length - str.length) + str;
+}
+
+function formatDate(date: Date) {
+  return date.getFullYear() + '-' + formatNumber(date.getMonth() + 1, 2) + '-' + formatNumber(date.getDate(), 2);
+}
 
 function RegisterPage() {
+  const tokenData = useReducer(APIStateContext, getTokenDataReducer);
+  const setTokens = useAction(APIStateContext, loginAction);
+  const navigate = useNavigate();
+
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [birthdate, setBirthdate] = useState(Date.now());
+  const [isMale, setIsMale] = useState(false);
+
+  useEffect(() => {
+    if (tokenData == null) return;
+    navigate('/');
+  }, []);
+
+  const { loading, send: sendRegister } = useRequest(RegisterRequest, (result, error) => {
+    if (!result || error) {
+      console.log(error?.data?.message);
+      return;
+    }
+
+    setTokens(result[0], result[1]);
+    navigate('/');
+  });
+
+  const registerButtonCallback = () => {
+    if (loading) return;
+    sendRegister({ fullname: name, email, phoneNumber: phone, dateOfBirth: birthdate, isMale, password });
+  };
+
   return (
     <div className='page'>
       <HeaderSpacing />
@@ -11,26 +56,46 @@ function RegisterPage() {
         <div className={classes.registerForm}>
           <p className={classes.registerTitle}>Регистрация</p>
           <div className={classes.field}>
-            <p>Имейл</p>
-            <input type='email' placeholder='Имейл' />
-          </div>
-          <div className={classes.field}>
-            <p>Парола</p>
-            <input type='text' placeholder='Парола' />
-          </div>
-          <div className={classes.field}>
             <p>Три Имена</p>
-            <input type='text' placeholder='Три Имена' />
+            <input type='text' placeholder='Три Имена' value={name} onInput={(e: any) => setName(e.target.value)} />
+          </div>
+          <div className={classes.field}>
+            <p>Имейл</p>
+            <input type='email' placeholder='Имейл' value={email} onInput={(e: any) => setEmail(e.target.value)} />
           </div>
           <div className={classes.field}>
             <p>Телефон</p>
-            <input type='tel' placeholder='Телефон' />
+            <input type='tel' placeholder='Телефон' value={phone} onInput={(e: any) => setPhone(e.target.value)} />
           </div>
-          <div className={classes.buttons}>
-            <p className={classes.button}>Създай профил</p>
-            <p>или</p>
-            <p className={classes.button + ' ' + classes.accentButton}>Влез</p>
+          <div className={classes.field}>
+            <p>Парола</p>
+            <input type='password' placeholder='Парола' value={password} onInput={(e: any) => setPassword(e.target.value)} />
           </div>
+          <div className={classes.fieldRow}>
+            <div className={classes.field} style={{ width: '50%' }}>
+              <p>Дата на разждане</p>
+              <input
+                type='date'
+                placeholder='Дата на раждане'
+                value={formatDate(new Date(birthdate))}
+                onInput={(e: any) => setBirthdate(new Date(e.target.value).getTime())}
+              />
+            </div>
+            <div className={classes.field} style={{ width: 'fit-content' }}>
+              <p>Пол</p>
+              <div className={classes.genderContainer}>
+                <div className={classes.icon}></div>
+                <label className={classes.switch}>
+                  <input type='checkbox' checked={isMale} onChange={(e: any) => setIsMale(e.target.checked)} />
+                  <span className={classes.slider}></span>
+                </label>
+                <div className={classes.icon}></div>
+              </div>
+            </div>
+          </div>
+          <p className={classes.button} onClick={registerButtonCallback}>
+            Регистрация
+          </p>
         </div>
       </div>
     </div>

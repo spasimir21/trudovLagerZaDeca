@@ -1,10 +1,12 @@
 // @ts-ignore
 import * as classes from './LandingPage.module.scss';
+import React, { useMemo } from 'react';
 // @ts-ignore
 import deca from './deca.png';
-import React from 'react';
 
 function LandingPage() {
+  const eventCallback = useMemo(() => e => {}, []);
+
   return (
     <div className={'page ' + classes.landingPage}>
       <div className={classes.introVideo}>
@@ -70,7 +72,7 @@ function LandingPage() {
       <div className={classes.motto}>
         <p>Нашето мото</p>
         <div className={classes.mottoContainer}>
-          <p>Баба знае най-добре!</p>
+          <p>Да растем заедно!</p>
           <div className={classes.baba}></div>
         </div>
       </div>

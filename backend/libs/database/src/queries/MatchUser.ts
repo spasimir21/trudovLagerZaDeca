@@ -4,11 +4,10 @@ import { User } from '../models/User';
 const MatchUser = Query(
   `
     MATCH (user:${User})
-    WHERE user.username = $username
-    OR user.email = $email
+    WHERE user.email = $email
     RETURN user
   `,
-  { username: String, email: String },
+  { email: String },
   { user: User }
 );
 
