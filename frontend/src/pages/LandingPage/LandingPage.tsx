@@ -1,11 +1,14 @@
 // @ts-ignore
 import * as classes from './LandingPage.module.scss';
+// @ts-ignore
+import deca from './deca.png';
 import React from 'react';
 
 function LandingPage() {
   return (
     <div className={'page ' + classes.landingPage}>
       <div className={classes.introVideo}>
+        <img src={deca} />
         <div className={classes.overlay}>
           <p className={classes.title}>Елате на лагер и отгледайте собствена реколта в Девин</p>
           <p className={classes.button}>Запиши се</p>
@@ -14,11 +17,13 @@ function LandingPage() {
       <div className={classes.mission}>
         <p>Нашата мисия</p>
         <blockquote>
-          Забавлението, комбинирано със здравословната храна и нови знания, е всичко, от което децата имат нужда!
+          Забавлението, комбинирано със здравословната храна и нови знания, е <strong>всичко</strong>, от което децата имат нужда!
         </blockquote>
       </div>
       <div className={classes.testimony}>
-        <p>Хора, посетили лагера споделят ...</p>
+        <p>
+          Децата се връщат доволни, <strong>НО ЗАЩО</strong>?
+        </p>
         <div className={classes.testimonies}>
           <div className={classes.testimonyRect}></div>
           <div className={classes.testimonyRect}></div>
@@ -78,7 +83,10 @@ function LandingPage() {
           <div className={classes.partner}></div>
           <div className={classes.partner}></div>
         </div>
-        <p className={classes.button}>Запиши се</p>
+        <div className={classes.partnerSignupContainer}>
+          <p className={classes.partnerText}>Готов ли си за приключение в градината, много забавления и изненади?</p>
+          <p className={classes.button}>Запиши се</p>
+        </div>
       </div>
     </div>
   );

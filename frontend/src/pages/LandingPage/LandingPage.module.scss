@@ -1,8 +1,18 @@
 .introVideo {
-  background-color: #949494;
+  // background-color: #949494;
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+
+.introVideo img {
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.4);
 }
 
 .overlay {
@@ -15,13 +25,13 @@
 }
 
 .title {
-  color: #000;
-  font-family: Jost;
+  color: #fff;
+  font-family: Geologica;
   font-size: 64px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 73.5px;
-  max-width: 683px;
+  max-width: 750px;
   margin: 0px;
 }
 
@@ -29,13 +39,13 @@
   display: block;
   margin: 0px;
   width: fit-content;
-  color: #fff;
-  font-family: Jost;
-  font-size: 32px;
+  color: var(--brown);
+  font-family: Geologica;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  background-color: #d9d9d9;
+  background-color: var(--orange);
   border-radius: 8px;
   padding: 7px 32px;
 }
@@ -45,27 +55,39 @@
   display: flex;
   flex-flow: column nowrap;
   gap: 100px;
+  margin-bottom: 80px;
+}
+
+.mission p {
+  color: var(--dark-green);
+  border-bottom: 7px solid var(--orange);
 }
 
 p {
-  font-family: Jost;
+  display: block;
+  width: fit-content;
+  font-family: Geologica;
   font-size: 32px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 51.776px;
   margin: 0px;
 }
 
 blockquote {
   position: relative;
-  width: 820px;
+  width: 726px;
   color: #000;
-  font-family: Jost;
+  font-family: Geologica;
   font-size: 48px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   align-self: center;
+}
+
+blockquote strong {
+  color: var(--dark-green);
 }
 
 blockquote:after {
@@ -74,9 +96,12 @@ blockquote:after {
   content: '\201C';
   font-size: 100px;
   position: absolute;
-  left: -70px;
-  top: -50px;
-  color: #d9d9d9;
+  font-family: Geologica;
+  font-size: 156px;
+  left: -90px;
+  bottom: -90px;
+  color: var(--dark-green);
+  transform: rotate(180deg);
 }
 
 blockquote:before {
@@ -85,17 +110,41 @@ blockquote:before {
   content: '\201C';
   font-size: 100px;
   position: absolute;
+  font-family: Geologica;
+  font-size: 156px;
   right: -55px;
-  bottom: -40px;
-  color: #d9d9d9;
-  transform: rotate(180deg);
+  top: -70px;
+  color: var(--dark-green);
 }
 
 .testimony {
-  padding: 50px 80px;
+  padding: 24px 80px;
   display: flex;
   flex-flow: column nowrap;
-  gap: 69px;
+  gap: 35px;
+  background-color: var(--light-green);
+  padding-bottom: 48px;
+}
+
+.testimony p {
+  color: #171717;
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  border-bottom: 7px solid var(--dark-green);
+  display: block;
+  width: fit-content;
+}
+
+.testimony strong {
+  color: #002500;
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
 }
 
 .testimonies {
@@ -119,6 +168,21 @@ blockquote:before {
   gap: 57px;
 }
 
+.facku p {
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  display: block;
+  width: fit-content;
+}
+
+.facku > p {
+  border-bottom: 7px solid var(--orange);
+}
+
 .fackQ {
   display: flex;
   flex-flow: column nowrap;
@@ -126,7 +190,7 @@ blockquote:before {
 }
 
 .question {
-  border-left: 5px solid black;
+  border-left: 5px solid var(--dark-green);
   display: flex;
   flex-flow: row nowrap;
   gap: 36px;
@@ -141,18 +205,25 @@ blockquote:before {
   font-style: normal;
   font-weight: 400;
   line-height: 51.776px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
 }
 
 .question p {
-  font-family: Jost;
-  font-size: 24px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
 .answer {
-  border-left: 5px solid #625f5f;
+  border-left: 5px solid #009800;
   display: flex;
   flex-flow: row nowrap;
   gap: 36px;
@@ -162,38 +233,47 @@ blockquote:before {
 
 .answer:before {
   content: 'O.';
-  font-family: Jost;
+  font-family: Geologica;
   font-size: 32px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 51.776px;
-  color: #625f5f;
+  color: #009800;
 }
 
 .answer p {
-  font-family: Jost;
+  color: var(--dark-green);
+  font-family: Raleway;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  color: #625f5f;
+  line-height: 130%;
 }
 
 .motto {
-  padding-top: 50px;
+  padding-top: 180px;
   display: flex;
   flex-flow: column nowrap;
   gap: 57px;
 }
 
-.motto p {
-  padding-left: 80px;
+.motto > p {
+  margin-left: 80px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  display: block;
+  width: fit-content;
+  border-bottom: 7px solid var(--orange);
 }
 
 .mottoContainer {
   width: 100%;
   height: 224px;
-  background-color: #1d1a1a;
+  background-color: var(--dark-green);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -207,18 +287,18 @@ blockquote:before {
   background-color: #605a5a;
   position: absolute;
   bottom: 0px;
-  right: 141px;
+  right: 157px;
 }
 
 .mottoContainer p {
   color: #fff;
-  font-family: Jost;
-  font-size: 28px;
+  font-family: Geologica;
+  font-size: 32px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 51.776px;
   position: relative;
-  right: 530px;
+  right: 545px;
 }
 
 .partners {
@@ -229,8 +309,17 @@ blockquote:before {
   margin-bottom: 69px;
 }
 
-.partners p {
-  padding-left: 80px;
+.partners > p {
+  margin-left: 80px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  display: block;
+  width: fit-content;
+  border-bottom: 7px solid var(--orange);
 }
 
 .partnerList {
@@ -250,4 +339,26 @@ blockquote:before {
   align-self: center;
   padding-left: 32px;
   margin-top: 20px;
+}
+
+.partnerSignupContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 160px;
+}
+
+.partnerSignupContainer .button {
+  box-shadow: 4px 6px 16px 0px rgba(0, 0, 0, 0.1), 18px 23px 29px 0px rgba(0, 0, 0, 0.09), 40px 53px 39px 0px rgba(0, 0, 0, 0.05),
+    70px 94px 47px 0px rgba(0, 0, 0, 0.01), 110px 146px 51px 0px rgba(0, 0, 0, 0);
+}
+
+.partnerText {
+  width: 550px;
+  font-family: Geologica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
