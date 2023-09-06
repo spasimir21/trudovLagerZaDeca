@@ -7,7 +7,7 @@ function ProfilePage() {
   return (
     <div className='page'>
       <HeaderSpacing />
-      <div className={classes.titleContainer}>
+      <div className="titleContainer">
         <p>Профил</p>
       </div>
       <div className={classes.profileInfo}>

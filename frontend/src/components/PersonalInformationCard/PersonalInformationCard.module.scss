@@ -1,0 +1,33 @@
+.personalInformationCard{
+  // padding : 10px;
+  // border: solid 1px red;
+  // padding: 30px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardImageContainer{
+  // margin: 20px;
+  border: solid 1px black;
+
+}
+
+.cardPersonInformation{
+  align-self: start;
+  border: solid 1px black;
+
+  // padding-left: 55px;
+}
+
+.tempImageDiv{
+  width: 206px;
+  height: 246;
+  background-color: grey;
+}
+
+.containerInformationCard{
+  border: solid 1px blue;
+  padding: 20px 45px;
+}
