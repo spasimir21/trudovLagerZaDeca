@@ -2,7 +2,7 @@
 import * as classes from './PersonalInformationCard.module.scss';
 import React from 'react';
 
-function PersonalInformationCard() {
+function PersonalInformationCard({ name, role }: { name: string, role: string }) {
   return (
   
   <div className={classes.personalInformationCard}>
@@ -13,8 +13,8 @@ function PersonalInformationCard() {
               <div className={classes.tempImageDiv}></div>
               </div>
           <div className={classes.cardPersonInformation}>
-            <p>PersonName</p>
-            <p>PersonPosition</p>
+            <p className={classes.namePerson}>{name}</p>
+            <p className={classes.positionPerson}>{role} </p>
           </div>
     </div>
     

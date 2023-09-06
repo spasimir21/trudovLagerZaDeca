@@ -6,7 +6,7 @@
 
 .youCanFindUsHereContainer{
   padding: 10px;
-  border: solid 1px black
+  // border: solid 1px black
 }
 
 .teamCardsContainer {
@@ -18,3 +18,17 @@
   margin-bottom:120px;
 }
 
+.phoneIcon img {
+  vertical-align: middle;
+  // padding-left: 5px;
+}
+
+.iconText{
+  margin-left: 10px;
+}
+
+.informationTitle{
+  text-decoration: underline;
+    text-decoration-color: #FFD600;
+    margin: 40px;
+}
