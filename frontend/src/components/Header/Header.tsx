@@ -7,7 +7,7 @@ function Header() {
   const location = useLocation();
 
   return (
-    <div className={classes.header}>
+    <div className={classes.header + ' ' + (location.pathname === '/' ? '' : classes.full)}>
       <div className={classes.buttons}>
         <div className={classes.logo}></div>
         {location.pathname != '/' && <Link to='/'>Начало</Link>}
