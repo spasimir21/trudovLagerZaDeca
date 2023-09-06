@@ -10,24 +10,48 @@
 
 .cardImageContainer{
   // margin: 20px;
-  border: solid 1px black;
 
 }
 
 .cardPersonInformation{
   align-self: start;
-  border: solid 1px black;
-
   // padding-left: 55px;
 }
 
+.cardPersonInformation .namePerson{
+  color: #002500 ;
+  //styleName: body bold;
+font-family: Geologica;
+font-size: 20px;
+font-weight: 600;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+.cardPersonInformation .positionPerson{
+  color: rgba(0, 37, 0, 0.6) ;
+
+font-family: Jost;
+font-size: 13px;
+font-weight: 400;
+line-height: 21px;
+letter-spacing: 0em;
+text-align: left;
+
+
+}
+
 .tempImageDiv{
-  width: 206px;
-  height: 246;
+  width: 226px;
+  height: 266;
   background-color: grey;
 }
 
 .containerInformationCard{
-  border: solid 1px blue;
-  padding: 20px 45px;
+  // border: solid 1px blue;
+  background-color: #CBFF8C;
+  padding: 30px 45px;
 }
+
