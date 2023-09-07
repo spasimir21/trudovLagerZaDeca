@@ -2,11 +2,11 @@ import { APIStateContext, getTokenDataReducer, loginAction } from '../../state/a
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
 import { useReducer, useAction } from '../../utils/state';
 import { LoginRequest } from '../../api/LoginRequest';
+import { Link, useNavigate } from 'react-router-dom';
 // @ts-ignore
 import * as classes from './LoginPage.module.scss';
 import React, { useEffect, useState } from 'react';
 import { useRequest } from '../../api/useRequest';
-import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
@@ -55,7 +55,9 @@ function LoginPage() {
               Влез
             </p>
             <p>или</p>
-            <p className={classes.button + ' ' + classes.accentButton}>Създай профил</p>
+            <Link to='/register' className={classes.button + ' ' + classes.accentButton}>
+              Създай профил
+            </Link>
           </div>
         </div>
       </div>

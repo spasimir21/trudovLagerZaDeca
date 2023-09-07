@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geologica&family=Raleway&family=Inter&display=swap');
 
 * {
   box-sizing: border-box;
@@ -41,4 +41,8 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 73.5px;
+}
+
+p {
+  margin: 0px;
 }

@@ -1,0 +1,102 @@
+.profileInfo {
+  width: 100%;
+  // margin-top: 46px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  // padding-left: 141px;
+  justify-content: start;
+  gap: 69px;
+}
+
+.verticalLine {
+  width: 0px;
+  height: 308px;
+  border-left: 3px solid #a7a7a7;
+}
+
+.avatarContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar {
+  width: 175px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.name {
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.logoutButton {
+  padding: 2px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--dark-green);
+  color: var(--dark-green);
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.logoutButton:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+.infoContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.infoContainer p {
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 130%;
+  margin: 0px;
+}
+
+.gender {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.genderContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+}
+
+.gender {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--dark-green);
+  border-radius: 50%;
+}

@@ -5,6 +5,9 @@ import * as classes from './Header.module.scss';
 import { useReducer } from '../../utils/state';
 import React from 'react';
 
+// @ts-ignore
+import logo from '../../assets/logo.png';
+
 function Header() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
   const location = useLocation();
@@ -12,7 +15,7 @@ function Header() {
   return (
     <div className={classes.header + ' ' + (location.pathname === '/' ? '' : classes.full)}>
       <div className={classes.buttons}>
-        <div className={classes.logo}></div>
+        <img className={classes.logo} src={logo} />
         {location.pathname != '/' && <Link to='/'>Начало</Link>}
         <Link to='/contacts'>Контакти</Link>
         <Link to='/camp'>Лагер</Link>

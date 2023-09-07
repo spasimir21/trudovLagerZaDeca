@@ -1,0 +1,76 @@
+.event {
+  width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0px;
+}
+
+.eventDates {
+  color: var(--Dark-green, #002500);
+  font-family: Geologica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 130%;
+  margin-bottom: 16px;
+}
+
+.eventTitleContainer {
+  background-color: var(--dark-green);
+  border-radius: 8px 8px 0px 0px;
+  height: 45px;
+  padding: 10px;
+  width: 500px;
+}
+
+.eventTitleContainer p {
+  color: #fff;
+  font-family: Geologica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.eventBody {
+  height: 232px;
+  width: 500px;
+  background-color: white;
+  padding: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.eventBody > p {
+  color: #000;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.button {
+  display: block;
+  margin: 0px;
+  width: fit-content;
+  color: var(--brown);
+  font-family: Geologica;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: var(--orange);
+  border-radius: 8px;
+  padding: 7px 32px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+.button {
+  text-decoration: none;
+}

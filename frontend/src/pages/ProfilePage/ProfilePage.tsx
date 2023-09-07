@@ -1,41 +1,51 @@
-import { APIStateContext, getTokenDataReducer, logoutAction } from '../../state/apiState';
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
-import { useAction, useReducer } from '../../utils/state';
-import { LogoutRequest } from '../../api/LogoutRequest';
+import { APIStateContext, getTokenDataReducer } from '../../state/apiState';
+import { ProfileInfo } from '../../components/ProfileInfo/ProfileInfo';
 // @ts-ignore
 import * as classes from './ProfilePage.module.scss';
-import { useRequest } from '../../api/useRequest';
 import { useNavigate } from 'react-router-dom';
+import { useReducer } from '../../utils/state';
 import React, { useEffect } from 'react';
 
-function formatNumber(number: number, length: number) {
-  const str = number.toString();
-  return '0'.repeat(length - str.length) + str;
-}
-
-function formatDate(date: Date) {
-  return formatNumber(date.getDate(), 2) + '.' + formatNumber(date.getMonth() + 1, 2) + '.' + date.getFullYear() + 'г.';
-}
+// @ts-ignore
+import badge0 from '../../assets/badge_finale/badge_im_a_young_farmer.png';
+// @ts-ignore
+import badge1 from '../../assets/badge_finale/badge_im_number_one.png';
+// @ts-ignore
+import badge2 from '../../assets/badge_finale/badge_keeping_the_sun_away.png';
+// @ts-ignore
+import badge3 from '../../assets/badge_finale/badge_mastered_the_hoe.png';
+// @ts-ignore
+import badge4 from '../../assets/badge_finale/badge_organization_first.png';
+// @ts-ignore
+import badge5 from '../../assets/badge_finale/badge_planted_and_grew_cucumbers.png';
+// @ts-ignore
+import badge6 from '../../assets/badge_finale/badge_planted_and_grew_lettace.png';
+// @ts-ignore
+import badge7 from '../../assets/badge_finale/badge_planted_and_grew_potatoes.png';
+// @ts-ignore
+import badge8 from '../../assets/badge_finale/badge_planted_and_grew_tomatoes.png';
+// @ts-ignore
+import badge9 from '../../assets/badge_finale/badge_safety_first.png';
+// @ts-ignore
+import badge10 from '../../assets/badge_finale/badge_sprayed_them_all.png';
+// @ts-ignore
+import badge11 from '../../assets/badge_finale/badge_stay_hydraded.png';
+// @ts-ignore
+import badge12 from '../../assets/badge_finale/badge_teamwork_makes_the_dream_work.png';
+// @ts-ignore
+import badge13 from '../../assets/badge_finale/badge_think_outside_the_box.png';
+// @ts-ignore
+import badge14 from '../../assets/badge_finale/badge_volunteer_to_the_rescue.png';
 
 function ProfilePage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
-  const clearTokens = useAction(APIStateContext, logoutAction);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (tokenData != null) return;
     navigate('/');
   }, []);
-
-  const { loading, send: sendLogout } = useRequest(LogoutRequest, () => {
-    clearTokens();
-    navigate('/');
-  });
-
-  const logoutButtonCallback = () => {
-    if (loading || tokenData == null) return;
-    sendLogout({ token: tokenData?.raw });
-  };
 
   return (
     <div className={'page ' + classes.profilePage}>
@@ -46,33 +56,26 @@ function ProfilePage() {
       {/* <div style={{ height: '55px' }}></div> */}
       <p className={classes.sectionTitle}>Обща информация</p>
       <div className={classes.profileInfo}>
-        <div className={classes.avatarContainer}>
-          <div className={classes.avatar}></div>
-          <p className={classes.name}>{tokenData?.parsed.fullname}</p>
-          <p className={classes.logoutButton} onClick={logoutButtonCallback}>
-            Изход
-          </p>
-        </div>
-        <div className={classes.verticalLine}></div>
-        <div className={classes.infoContainer}>
-          <p>
-            <strong>имейл</strong>: {tokenData?.parsed.email}
-          </p>
-          <p>
-            <strong>телефон</strong>: {tokenData?.parsed.phoneNumber}
-          </p>
-          <div className={classes.genderContainer}>
-            <p>
-              <strong>пол</strong>:
-            </p>
-            <div className={classes.gender}></div>
-          </div>
-          <p>
-            <strong>дата на раждане</strong>: {formatDate(new Date(tokenData?.parsed.dateOfBirth ?? 0))}
-          </p>
-        </div>
+        <ProfileInfo hasLogout={true} />
       </div>
       <p className={classes.sectionTitle}>Награди</p>
+      <div className={classes.badges}>
+        <img src={badge0} className={classes.earned} />
+        <img src={badge1} />
+        <img src={badge2} className={classes.earned} />
+        <img src={badge3} />
+        <img src={badge4} className={classes.earned} />
+        <img src={badge5} />
+        <img src={badge6} className={classes.earned} />
+        <img src={badge7} />
+        <img src={badge8} className={classes.earned} />
+        <img src={badge9} />
+        <img src={badge10} className={classes.earned} />
+        <img src={badge11} />
+        <img src={badge12} className={classes.earned} />
+        <img src={badge13} />
+        <img src={badge14} className={classes.earned} />
+      </div>
     </div>
   );
 }

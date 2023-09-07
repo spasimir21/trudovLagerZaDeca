@@ -5,7 +5,7 @@
   position: relative;
 }
 
-.introVideo img {
+.introVideo video {
   object-fit: cover;
   position: absolute;
   top: 0px;
@@ -21,18 +21,36 @@
   left: 100px;
   display: flex;
   flex-flow: column nowrap;
-  gap: 54px;
+  gap: 24px;
 }
 
 .title {
   color: #fff;
   font-family: Geologica;
-  font-size: 64px;
+  font-size: 56px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 73.5px;
-  max-width: 750px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -1.12px;
+  max-width: 932px;
   margin: 0px;
+}
+
+.title strong {
+  font-weight: 800 !important;
+  font-style: bold !important;
+  color: var(--orange);
+}
+
+.description {
+  color: white;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  max-width: 558px;
+  margin-bottom: 60px;
 }
 
 .landingPage .button {
@@ -63,67 +81,54 @@
   border-bottom: 7px solid var(--orange);
 }
 
-p {
-  display: block;
-  width: fit-content;
-  font-family: Geologica;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 51.776px;
-  margin: 0px;
+.miscSection {
+  padding: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  // justify-content: space-between;
+  gap: 50px;
+  align-items: center;
 }
 
-blockquote {
-  position: relative;
-  width: 726px;
-  color: #000;
-  font-family: Geologica;
-  font-size: 48px;
+.miscSection p {
+  color: #020204;
+  font-family: Inter;
+  font-size: 64px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  align-self: center;
+  line-height: 73.5px;
+  max-width: 944px;
 }
 
-blockquote strong {
-  color: var(--dark-green);
+.miscSection strong {
+  font-weight: 800 !important;
 }
 
-blockquote:after {
-  display: block;
-  padding-left: 10px;
-  content: '\201C';
-  font-size: 100px;
-  position: absolute;
-  font-family: Geologica;
-  font-size: 156px;
-  left: -90px;
-  bottom: -90px;
-  color: var(--dark-green);
-  transform: rotate(180deg);
+.misc {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 35px;
 }
 
-blockquote:before {
-  display: block;
-  padding-left: 10px;
-  content: '\201C';
-  font-size: 100px;
-  position: absolute;
-  font-family: Geologica;
-  font-size: 156px;
-  right: -55px;
-  top: -70px;
-  color: var(--dark-green);
-}
+// p {
+//   display: block;
+//   width: fit-content;
+//   font-family: Geologica;
+//   font-size: 32px;
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: 51.776px;
+//   margin: 0px;
+// }
 
 .testimony {
-  padding: 24px 80px;
+  padding: 68px 80px;
   display: flex;
   flex-flow: column nowrap;
   gap: 35px;
   background-color: var(--light-green);
-  padding-bottom: 48px;
+  padding-bottom: 100px;
 }
 
 .testimony p {
@@ -135,7 +140,8 @@ blockquote:before {
   line-height: 51.776px;
   border-bottom: 7px solid var(--dark-green);
   display: block;
-  width: fit-content;
+  width: 100px;
+  white-space: nowrap;
 }
 
 .testimony strong {
@@ -153,10 +159,30 @@ blockquote:before {
   gap: 32px;
 }
 
-.testimonyRect {
-  background-color: #d9d9d9;
-  aspect-ratio: 1.6;
+.videoContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  gap: 16px;
   flex-grow: 1;
+  position: relative;
+}
+
+.videoContainer > p {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  border-bottom: none;
+}
+
+.video {
+  aspect-ratio: 2;
+  // flex-grow: 1;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
 }
 
 .facku {
@@ -175,12 +201,13 @@ blockquote:before {
   font-style: normal;
   font-weight: 600;
   line-height: 51.776px;
-  display: block;
-  width: fit-content;
 }
 
 .facku > p {
   border-bottom: 7px solid var(--orange);
+  display: block;
+  width: 100px;
+  white-space: nowrap;
 }
 
 .fackQ {
@@ -251,7 +278,7 @@ blockquote:before {
 }
 
 .motto {
-  padding-top: 180px;
+  padding-top: 500px;
   display: flex;
   flex-flow: column nowrap;
   gap: 57px;
@@ -291,14 +318,34 @@ blockquote:before {
 }
 
 .mottoContainer p {
-  color: #fff;
+  color: var(--light-green);
   font-family: Geologica;
-  font-size: 32px;
+  font-size: 80px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   line-height: 51.776px;
   position: relative;
-  right: 545px;
+  right: 350px;
+}
+
+// https://codepen.io/sosuke/pen/Pjoqqp
+.pear {
+  transform: rotate(6.37deg) scale(0.75);
+  filter: brightness(0) invert(19%) sepia(81%) saturate(2171%) hue-rotate(100deg) brightness(93%) contrast(105%);
+  position: absolute;
+  left: 125px;
+}
+
+.asen {
+  position: absolute;
+  bottom: -44px;
+  left: 185px;
+}
+
+.harry {
+  position: absolute;
+  bottom: -40px;
+  right: 65px;
 }
 
 .partners {
@@ -361,4 +408,14 @@ blockquote:before {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s;
+  cursor: pointer;
+}
+
+.button {
+  text-decoration: none;
 }

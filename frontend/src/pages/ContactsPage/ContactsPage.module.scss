@@ -4,18 +4,22 @@
   background-color: gray;
 }
 
-.youCanFindUsHereContainer{
+.youCanFindUsHereContainer {
   // padding: 10px;
   // border: solid 1px black
 }
 
 .teamCardsContainer {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  // padding-bottom: 150px;
   display: grid;
-  grid-template-rows: 1fr 1fr; 
-  grid-template-columns: repeat(4, 1fr); /* Four columns with equal width */
-  gap: 30px;
-  margin:60px;
-  margin-bottom:120px;
+  grid-template-rows: repeat(2, 382px);
+  grid-template-columns: repeat(4, 276px); /* Four columns with equal width */
+  grid-gap: 32px;
+  justify-content: center;
+  // margin: 60px;
+  // margin-bottom: 120px;
 }
 
 .phoneIcon img {
@@ -23,12 +27,45 @@
   // padding-left: 5px;
 }
 
-.iconText{
+.iconText {
   margin-left: 10px;
 }
 
-.informationTitle{
-  text-decoration: underline;
-    text-decoration-color: #FFD600;
-    margin: 60px;
+.informationTitle {
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  // text-decoration: underline;
+  // text-decoration-color: #ffd600;
+  border-bottom: 5px solid var(--orange);
+  display: block;
+  width: 100px;
+  white-space: nowrap;
+  margin-top: 64px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 26px;
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.accentContainer {
+  background-color: var(--dark-green) !important;
+}
+
+.accentContainer p {
+  color: var(--light-green) !important;
 }
