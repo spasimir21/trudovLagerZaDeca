@@ -1,0 +1,32 @@
+.modalContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  width: 540px;
+  height: 231px;
+  background-color: var(--light-green);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  padding: 40px 0px;
+}
+
+.modal p {
+  color: var(--dark-green);
+  font-family: Geologica;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

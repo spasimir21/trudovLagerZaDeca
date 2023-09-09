@@ -1,5 +1,6 @@
+import { HTTPError, RequestFactory } from './useRequest';
 import { DOMAIN, Service } from '../constants';
-import { RequestFactory } from './useRequest';
+import * as jwt from './jwt';
 
 type RegisterRequestResult = [string, string];
 
@@ -23,6 +24,14 @@ const RegisterRequest: RequestFactory<RegisterRequestResult, RegisterRequestArgs
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(args)
+  },
+  mock: async () => {
+    const accounts = JSON.parse(localStorage.getItem('accounts') ?? '{}');
+    if (args.email in accounts) throw new HTTPError(400, 'Email is already registered!', {});
+    accounts[args.email] = args;
+    localStorage.setItem('accounts', JSON.stringify(accounts));
+
+    return [await jwt.sign(args), ''];
   }
 });
 

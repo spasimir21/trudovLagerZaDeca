@@ -1,12 +1,12 @@
 import { APIStateContext, getTokenDataReducer, loginAction } from '../../state/apiState';
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
+import { useNavigate, ScrollRestoration } from 'react-router-dom';
 import { RegisterRequest } from '../../api/RegisterRequest';
 import { useAction, useReducer } from '../../utils/state';
 // @ts-ignore
 import * as classes from './RegisterPage.module.scss';
 import React, { useEffect, useState } from 'react';
 import { useRequest } from '../../api/useRequest';
-import { useNavigate } from 'react-router-dom';
 
 // @ts-ignore
 import femaleIcon from '../../assets/femaleIcon.svg';
@@ -24,7 +24,7 @@ function formatDate(date: Date) {
 
 function RegisterPage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
-  const setTokens = useAction(APIStateContext, loginAction);
+  const setTokens = useAction(APIStateContext, loginAction as any);
   const navigate = useNavigate();
 
   const [name, setName] = useState('');
@@ -41,7 +41,7 @@ function RegisterPage() {
 
   const { loading, send: sendRegister } = useRequest(RegisterRequest, (result, error) => {
     if (!result || error) {
-      console.log(error?.data?.message);
+      console.log(error?.error.message);
       return;
     }
 
@@ -74,7 +74,12 @@ function RegisterPage() {
           </div>
           <div className={classes.field}>
             <p>Парола</p>
-            <input type='password' placeholder='Парола' value={password} onInput={(e: any) => setPassword(e.target.value)} />
+            <input
+              type='password'
+              placeholder='Парола'
+              value={password}
+              onInput={(e: any) => setPassword(e.target.value)}
+            />
           </div>
           <div className={classes.fieldRow}>
             <div className={classes.field} style={{ width: '50%' }}>

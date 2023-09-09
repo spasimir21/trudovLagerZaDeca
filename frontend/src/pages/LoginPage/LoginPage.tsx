@@ -1,8 +1,8 @@
 import { APIStateContext, getTokenDataReducer, loginAction } from '../../state/apiState';
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
+import { Link, useNavigate, ScrollRestoration } from 'react-router-dom';
 import { useReducer, useAction } from '../../utils/state';
 import { LoginRequest } from '../../api/LoginRequest';
-import { Link, useNavigate } from 'react-router-dom';
 // @ts-ignore
 import * as classes from './LoginPage.module.scss';
 import React, { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ import { useRequest } from '../../api/useRequest';
 
 function LoginPage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
-  const setTokens = useAction(APIStateContext, loginAction);
+  const setTokens = useAction(APIStateContext, loginAction as any);
   const navigate = useNavigate();
 
   const [password, setPassword] = useState('');
@@ -23,7 +23,7 @@ function LoginPage() {
 
   const { loading, send: sendLogin } = useRequest(LoginRequest, (result, error) => {
     if (!result || error) {
-      console.log(error?.data?.message);
+      console.log(error?.error.message);
       return;
     }
 
@@ -48,7 +48,12 @@ function LoginPage() {
           </div>
           <div className={classes.field}>
             <p>Парола</p>
-            <input type='password' placeholder='Парола' value={password} onInput={(e: any) => setPassword(e.target.value)} />
+            <input
+              type='password'
+              placeholder='Парола'
+              value={password}
+              onInput={(e: any) => setPassword(e.target.value)}
+            />
           </div>
           <div className={classes.buttons}>
             <p className={classes.button} onClick={loginButtonCallback}>

@@ -1,8 +1,41 @@
 // @ts-ignore
 import * as classes from './PersonalInformationCard.module.scss';
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 
-function PersonalInformationCard({ name, role, image }: { name: string; role: string; image: string }) {
+// @ts-ignore
+import playButton from '../../assets/play-button.svg';
+// @ts-ignore
+import pauseButton from '../../assets/pause-button.svg';
+
+function PersonalInformationCard({
+  name,
+  role,
+  image,
+  audioFile
+}: {
+  name: string;
+  role: string;
+  image: string;
+  audioFile?: string;
+}) {
+  const [isPlayingAudio, setIsAudioPlaying] = useState(false);
+
+  const audio = useMemo(() => {
+    if (audioFile == null) return null;
+    const audio = new Audio(audioFile);
+    audio.loop = true;
+    return audio;
+  }, []);
+
+  const toggleAudio = () => {
+    if (audio == null) return;
+
+    if (isPlayingAudio) audio.pause();
+    else audio.play();
+
+    setIsAudioPlaying(!isPlayingAudio);
+  };
+
   return (
     <div className={classes.personalInformationCard}>
       <div className={classes.containerInformationCard}>
@@ -11,9 +44,18 @@ function PersonalInformationCard({ name, role, image }: { name: string; role: st
           {/* <div className={classes.tempImageDiv}></div> */}
           <img src={image} className={classes.tempImageDiv} />
         </div>
-        <div className={classes.cardPersonInformation}>
-          <p className={classes.namePerson}>{name}</p>
-          <p className={classes.positionPerson}>{role} </p>
+        <div className={classes.cardBottom}>
+          <div className={classes.cardPersonInformation}>
+            <p className={classes.namePerson}>{name}</p>
+            <p className={classes.positionPerson}>{role}</p>
+          </div>
+          {audio && (
+            <img
+              src={isPlayingAudio ? pauseButton : playButton}
+              className={classes.audioButton}
+              onClick={toggleAudio}
+            />
+          )}
         </div>
       </div>
     </div>

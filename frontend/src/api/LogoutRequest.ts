@@ -17,7 +17,8 @@ const LogoutRequest: RequestFactory<LogoutRequestResult, LogoutRequestArgs, Logo
   request: {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${args.token}` }
-  }
+  },
+  mock: async () => {}
 });
 
 export { LogoutRequest };

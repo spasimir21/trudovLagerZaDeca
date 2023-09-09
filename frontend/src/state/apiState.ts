@@ -1,5 +1,5 @@
 import { Action, Reducer, createStateContext, State } from '../utils/state';
-import jsonwebtoken from 'jsonwebtoken';
+import * as jwt from '../api/jwt';
 
 enum APIStateScopes {
   Token
@@ -29,23 +29,21 @@ function getDefaultAPIState(): APIState {
   };
 }
 
-function parseToken(rawToken: string): TokenData {
+async function parseToken(rawToken: string): Promise<TokenData> {
   return {
     raw: rawToken,
-    parsed: jsonwebtoken.decode(rawToken) as any
+    parsed: (await jwt.decode(rawToken)) as any
   };
 }
 
-function loadAPIState() {
-  const state = getDefaultAPIState();
+function loadTokens() {
+  const token = localStorage.getItem('token');
+  if (token == null) return null;
 
-  const rawToken = localStorage.getItem('token');
-  if (rawToken == null) return state;
+  const refreshToken = localStorage.getItem('refreshToken');
+  // const token = await parseToken(rawToken);
 
-  state.refreshToken = localStorage.getItem('refreshToken');
-  state.token = parseToken(rawToken);
-
-  return state;
+  return [token, refreshToken];
 }
 
 function saveAPIState(state: APIState) {
@@ -54,6 +52,13 @@ function saveAPIState(state: APIState) {
 
   if (state.token != null) localStorage.setItem('token', state.token.raw);
   else localStorage.removeItem('token');
+}
+
+async function loadAPIState(state: State<APIState, APIStateScopes>) {
+  const tokens = loadTokens();
+  if (tokens == null) return;
+
+  state.modify(loginAction.modifier as any, tokens, loginAction.scopes);
 }
 
 function setupAPIStateAutosave(state: State<APIState, APIStateScopes>) {
@@ -65,9 +70,9 @@ const APIStateContext = createStateContext<APIState, APIStateScopes>();
 const logoutAction = Action(getDefaultAPIState, [APIStateScopes.Token]);
 
 const loginAction = Action(
-  (_, token: string, refreshToken: string) => {
+  async (_, token: string, refreshToken: string) => {
     return {
-      token: parseToken(token),
+      token: await parseToken(token),
       refreshToken
     };
   },

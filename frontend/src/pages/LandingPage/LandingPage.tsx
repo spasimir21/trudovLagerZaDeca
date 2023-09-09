@@ -2,7 +2,7 @@
 import * as classes from './LandingPage.module.scss';
 // @ts-ignore
 import landingLoop from 'url:../../assets/landingLoop.mp4';
-import { Link } from 'react-router-dom';
+import { Link, ScrollRestoration } from 'react-router-dom';
 import React from 'react';
 
 // @ts-ignore
@@ -15,6 +15,13 @@ import harry from '../../assets/harry.png';
 // @ts-ignore
 import corn from '../../assets/corn.svg';
 
+// @ts-ignore
+import cumvan from '../../assets/cumvan.png';
+// @ts-ignore
+import pticiti from '../../assets/pticiti.png';
+// @ts-ignore
+import carrot from '../../assets/carrot.png';
+
 function LandingPage() {
   return (
     <div className={'page ' + classes.landingPage}>
@@ -22,10 +29,12 @@ function LandingPage() {
         <video src={landingLoop} muted autoPlay loop />
         <div className={classes.overlay}>
           <p className={classes.title}>
-            <strong>Забавлението, здравословната храна и нови знания</strong> е всичко, от което <i>децата</i> имат нужда!
+            <strong>Забавлението, здравословната храна и нови знания</strong> е всичко, от което <i>децата</i> имат
+            нужда!
           </p>
           <p className={classes.description}>
-            Лагер “Розов домат” е летен градинарски лагер, който предлага разнообразна програма за деца между 7 и 12 години.
+            Лагер “Розов домат” е летен градинарски лагер, който предлага разнообразна програма за деца между 7 и 12
+            години.
           </p>
           <Link to='/signup' className={classes.button}>
             Запиши се
@@ -39,6 +48,7 @@ function LandingPage() {
         </blockquote>
       </div> */}
       <div className={classes.testimony}>
+        <img src={carrot} className={classes.carrot} />
         <p>Децата се връщат доволни - чуйте защо:</p>
         <div className={classes.testimonies}>
           <div className={classes.videoContainer}>
@@ -48,7 +58,8 @@ function LandingPage() {
               // height='315'
               src='https://www.youtube.com/embed/QQjB6uIka-Q?si=zugIwjj0Vp_vyc73'
               title='YouTube video player'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'></iframe>
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            ></iframe>
             <p>Асен споделя за новите си приятелства.</p>
           </div>
           <div className={classes.videoContainer} style={{ top: '50px' }}>
@@ -58,7 +69,8 @@ function LandingPage() {
               // height='315'
               src='https://www.youtube.com/embed/8XWArjd6Rmc?si=BmL1dnHvR-APkVja'
               title='YouTube video player'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'></iframe>
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            ></iframe>
             <p>Хари е впечатлен от плодовете, които се отглеждат в градината.</p>
           </div>
         </div>
@@ -106,8 +118,8 @@ function LandingPage() {
           </div>
           <div className={classes.answer}>
             <p>
-              Подбран екип експерти в сферата на работата с деца ще се грижат за тяхното преживяване, а нашите експертни фермери
-              ще се грижат за поддържането на реколтата между различните фази на лагера
+              Подбран екип експерти в сферата на работата с деца ще се грижат за тяхното преживяване, а нашите експертни
+              фермери ще се грижат за поддържането на реколтата между различните фази на лагера
             </p>
           </div>
         </div>
@@ -116,7 +128,10 @@ function LandingPage() {
             <p>Какви активности ще се провеждат на лагера?</p>
           </div>
           <div className={classes.answer}>
-            <p>Децата ще се забавляват с редица образователни и развлекателни активности, част от които може да видите тук</p>
+            <p>
+              Децата ще се забавляват с редица образователни и развлекателни активности, част от които може да видите
+              тук
+            </p>
           </div>
         </div>
       </div>
@@ -131,11 +146,9 @@ function LandingPage() {
       <div className={classes.partners}>
         <p>Партньори</p>
         <div className={classes.partnerList}>
-          <div className={classes.partner}></div>
-          <div className={classes.partner}></div>
-          <div className={classes.partner}></div>
-          <div className={classes.partner}></div>
-          <div className={classes.partner}></div>
+          <img src={cumvan} />
+          <p className={classes.iceCream}>ICE CREAM WORLD</p>
+          <img src={pticiti} />
         </div>
         <div className={classes.partnerSignupContainer}>
           <p className={classes.partnerText}>Готов ли си за приключение в градината, много забавления и изненади?</p>

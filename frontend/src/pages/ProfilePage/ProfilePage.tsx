@@ -1,9 +1,9 @@
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
 import { APIStateContext, getTokenDataReducer } from '../../state/apiState';
 import { ProfileInfo } from '../../components/ProfileInfo/ProfileInfo';
+import { useNavigate, ScrollRestoration } from 'react-router-dom';
 // @ts-ignore
 import * as classes from './ProfilePage.module.scss';
-import { useNavigate } from 'react-router-dom';
 import { useReducer } from '../../utils/state';
 import React, { useEffect } from 'react';
 
@@ -38,6 +38,9 @@ import badge13 from '../../assets/badge_finale/badge_think_outside_the_box.png';
 // @ts-ignore
 import badge14 from '../../assets/badge_finale/badge_volunteer_to_the_rescue.png';
 
+// @ts-ignore
+import pear from '../../assets/pear.png';
+
 function ProfilePage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
   const navigate = useNavigate();
@@ -48,7 +51,7 @@ function ProfilePage() {
   }, []);
 
   return (
-    <div className={'page ' + classes.profilePage}>
+    <div className='page'>
       <HeaderSpacing />
       <div className='titleContainer'>
         <p>Профил</p>
@@ -58,7 +61,10 @@ function ProfilePage() {
       <div className={classes.profileInfo}>
         <ProfileInfo hasLogout={true} />
       </div>
-      <p className={classes.sectionTitle}>Награди</p>
+      <div style={{ position: 'relative' }}>
+        <img src={pear} className={classes.pear} />
+        <p className={classes.sectionTitle}>Награди</p>
+      </div>
       <div className={classes.badges}>
         <img src={badge0} className={classes.earned} />
         <img src={badge1} />

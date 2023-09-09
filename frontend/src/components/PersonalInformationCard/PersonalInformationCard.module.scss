@@ -8,12 +8,16 @@
   align-items: center;
 }
 
-.cardImageContainer {
+.cardImageContainer img {
   // margin: 20px;
+  object-position: center -1px;
 }
 
 .cardPersonInformation {
-  align-self: start;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-self: stretch;
   // padding-left: 55px;
 }
 
@@ -30,10 +34,11 @@
 
 .cardPersonInformation .positionPerson {
   color: rgba(0, 37, 0, 0.6);
-  font-family: Jost;
-  font-size: 15px;
+  font-family: Geologica;
+  font-size: 13px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 21px;
+  line-height: 21.034px;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -51,4 +56,18 @@
   background-color: #cbff8c;
   // padding: 30px 45px;
   padding: 25px;
+}
+
+.cardBottom {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.audioButton {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
 }

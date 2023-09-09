@@ -4,11 +4,6 @@
   background-color: gray;
 }
 
-.youCanFindUsHereContainer {
-  // padding: 10px;
-  // border: solid 1px black
-}
-
 .teamCardsContainer {
   padding-top: 64px;
   padding-bottom: 64px;
@@ -20,6 +15,10 @@
   justify-content: center;
   // margin: 60px;
   // margin-bottom: 120px;
+}
+
+.gap {
+  height: 50px;
 }
 
 .phoneIcon img {
@@ -46,7 +45,7 @@
   white-space: nowrap;
   margin-top: 64px;
   margin-left: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 ul {
@@ -68,4 +67,12 @@ ul {
 
 .accentContainer p {
   color: var(--light-green) !important;
+}
+
+.tomato {
+  position: absolute;
+  top: -400px;
+  right: -30px;
+  width: 260px;
+  height: 260px;
 }

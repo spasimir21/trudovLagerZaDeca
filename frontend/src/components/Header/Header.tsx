@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 // @ts-ignore
 import * as classes from './Header.module.scss';
 import { useReducer } from '../../utils/state';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // @ts-ignore
 import logo from '../../assets/logo.png';
@@ -12,8 +12,27 @@ function Header() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
   const location = useLocation();
 
+  const [headerHasBackground, setHeaderHasBackground] = useState(false);
+
+  useEffect(() => {
+    const callback = () => {
+      if (location.pathname !== '/') {
+        setHeaderHasBackground(true);
+        return;
+      }
+
+      if (window.scrollY >= window.innerHeight && !headerHasBackground) setHeaderHasBackground(true);
+      if (window.scrollY < window.innerHeight && headerHasBackground) setHeaderHasBackground(false);
+    };
+
+    callback();
+    window.addEventListener('scroll', callback);
+
+    return () => window.removeEventListener('scroll', callback);
+  }, [location.pathname, headerHasBackground]);
+
   return (
-    <div className={classes.header + ' ' + (location.pathname === '/' ? '' : classes.full)}>
+    <div className={classes.header + ' ' + (headerHasBackground ? classes.full : '')}>
       <div className={classes.buttons}>
         <img className={classes.logo} src={logo} />
         {location.pathname != '/' && <Link to='/'>Начало</Link>}

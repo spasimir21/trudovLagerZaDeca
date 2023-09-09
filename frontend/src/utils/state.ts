@@ -12,8 +12,13 @@ class State<T, TScope extends string | number | symbol> {
     return this._value;
   }
 
-  modify<TArgs extends [...any[]]>(modifier: (value: T, ...args: TArgs) => T, args: TArgs, scopes: TScope[]) {
-    this._value = modifier(this._value, ...args);
+  async modify<TArgs extends [...any[]]>(
+    modifier: (value: T, ...args: TArgs) => T | Promise<T>,
+    args: TArgs,
+    scopes: TScope[]
+  ) {
+    const valueOrPromise = modifier(this._value, ...args);
+    this._value = valueOrPromise instanceof Promise ? await valueOrPromise : valueOrPromise;
     const callbacks = new Set<(value: T) => void>();
 
     for (const scope of scopes) {
@@ -44,7 +49,7 @@ function createState<T>(initialValue: T) {
 }
 
 interface Action<T, TScope extends string | number | symbol, TArgs extends [...any[]]> {
-  modifier(value: T, ...args: TArgs): T;
+  modifier(value: T, ...args: TArgs): T | Promise<T>;
   scopes: TScope[];
 }
 
@@ -90,6 +95,7 @@ function useReducer<T, TReduced, TScope extends string | number | symbol, TArgs 
 
   useEffect(() => {
     const callback = (newValue: T) => setValue(reducer.reduce(newValue, ...args));
+    callback(state.value);
 
     state.subscribe(callback, reducer.scopes);
 

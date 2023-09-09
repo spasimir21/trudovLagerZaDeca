@@ -1,5 +1,6 @@
 import { HeaderSpacing } from '../../components/HeaderSpacing/HeaderSpacing';
 import { PersonalInformationCard } from '../../components/PersonalInformationCard/PersonalInformationCard';
+import { ScrollRestoration } from 'react-router-dom';
 // @ts-ignore
 import * as classes from './ContactsPage.module.scss';
 import React from 'react';
@@ -31,7 +32,8 @@ import ellie from '../../assets/team/ellie.png';
 // @ts-ignore
 import dari from '../../assets/team/dari.png';
 
-// import
+// @ts-ignore
+import tomato from '../../assets/tomato.svg';
 
 const teamMembars = [
   { name: 'Николай Лазаров', role: 'Бизнес Мениджър', image: niki },
@@ -72,7 +74,9 @@ function ContactsPage() {
         </a>
       </div>
 
-      <div className={classes.youCanFindUsHereContainer}>
+      <div className={classes.gap}></div>
+
+      <div>
         <p className={classes.informationTitle}>Можете да ни намерите тук:</p>
         <a href='https://www.facebook.com/profile.php?id=61550674066771' target='about:blank'>
           <ul className={classes.phoneIcon}>
@@ -85,12 +89,15 @@ function ContactsPage() {
             <img src={instagram} alt='phone image' className={classes.iconText} /> rozovdomat_camp
           </ul>
         </a>
-        <ul className={classes.phoneIcon}>
+        {/* <ul className={classes.phoneIcon}>
           <img src={tiktok} alt='phone image' className={classes.iconText} /> rozovdomat.camp
-        </ul>
+        </ul> */}
       </div>
 
+      <div className={classes.gap}></div>
+
       <div className={'titleContainer ' + classes.accentContainer} style={{ marginTop: '60px' }}>
+        <img src={tomato} className={classes.tomato} />
         <p>Екип</p>
       </div>
 

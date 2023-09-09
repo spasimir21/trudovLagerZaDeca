@@ -50,7 +50,7 @@ function Footer() {
           <a href='https://instagram.com/rozovdomat_camp?igshid=NzZlODBkYWE4Ng==' target='about:blank'>
             <img className={classes.icon} src={instaIcon} />
           </a>
-          <img className={classes.icon} src={tiktokIcon} />
+          {/* <img className={classes.icon} src={tiktokIcon} /> */}
         </div>
       </div>
     </div>

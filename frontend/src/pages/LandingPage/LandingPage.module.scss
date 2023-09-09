@@ -66,6 +66,9 @@
   background-color: var(--orange);
   border-radius: 8px;
   padding: 7px 32px;
+  box-shadow: 4px 6px 16px 0px rgba(0, 0, 0, 0.1), 18px 23px 29px 0px rgba(0, 0, 0, 0.09),
+    40px 53px 39px 0px rgba(0, 0, 0, 0.05), 70px 94px 47px 0px rgba(0, 0, 0, 0.01),
+    110px 146px 51px 0px rgba(0, 0, 0, 0);
 }
 
 .mission {
@@ -129,6 +132,7 @@
   gap: 35px;
   background-color: var(--light-green);
   padding-bottom: 100px;
+  position: relative;
 }
 
 .testimony p {
@@ -330,10 +334,10 @@
 
 // https://codepen.io/sosuke/pen/Pjoqqp
 .pear {
-  transform: rotate(6.37deg) scale(0.75);
-  filter: brightness(0) invert(19%) sepia(81%) saturate(2171%) hue-rotate(100deg) brightness(93%) contrast(105%);
+  transform: scale(0.65);
+  // filter: brightness(0) invert(19%) sepia(81%) saturate(2171%) hue-rotate(100deg) brightness(93%) contrast(105%);
   position: absolute;
-  left: 125px;
+  left: 7px;
 }
 
 .asen {
@@ -373,7 +377,9 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0px 80px;
+  margin-bottom: 30px;
 }
 
 .partner {
@@ -397,8 +403,9 @@
 }
 
 .partnerSignupContainer .button {
-  box-shadow: 4px 6px 16px 0px rgba(0, 0, 0, 0.1), 18px 23px 29px 0px rgba(0, 0, 0, 0.09), 40px 53px 39px 0px rgba(0, 0, 0, 0.05),
-    70px 94px 47px 0px rgba(0, 0, 0, 0.01), 110px 146px 51px 0px rgba(0, 0, 0, 0);
+  box-shadow: 4px 6px 16px 0px rgba(0, 0, 0, 0.1), 18px 23px 29px 0px rgba(0, 0, 0, 0.09),
+    40px 53px 39px 0px rgba(0, 0, 0, 0.05), 70px 94px 47px 0px rgba(0, 0, 0, 0.01),
+    110px 146px 51px 0px rgba(0, 0, 0, 0);
 }
 
 .partnerText {
@@ -418,4 +425,21 @@
 
 .button {
   text-decoration: none;
+}
+
+.iceCream {
+  color: #f26c6c;
+  font-family: Geologica;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 51.776px;
+  width: 210px;
+  height: 84px;
+}
+
+.carrot {
+  position: absolute;
+  right: 0px;
+  top: -100px;
 }

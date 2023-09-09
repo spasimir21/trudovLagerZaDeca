@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
 import { useValueRef } from '../utils/valueRef';
+
+const USE_MOCK = true;
 
 interface HTTPError<TError> {
   code: number;
@@ -7,7 +8,23 @@ interface HTTPError<TError> {
   data: TError | null;
 }
 
-type RequestFactory<TResult = any, TArgs = {}, TError = any> = (args: TArgs) => { url: string; request?: RequestInit };
+type RequestFactory<TResult = any, TArgs = {}, TError = any> = (args: TArgs) => {
+  url: string;
+  request?: RequestInit;
+  mock?: () => Promise<TResult>;
+};
+
+class HTTPError<TError> {
+  code: number;
+  error: Error;
+  data: TError | null;
+
+  constructor(code: number, message: string, data: TError | null) {
+    this.code = code;
+    this.error = new Error(message);
+    this.data = data;
+  }
+}
 
 // function callbackRegistry<TArgs extends [...any[]]>() {
 //   const callbacks: ((...args: TArgs) => void)[] = [];
@@ -33,12 +50,32 @@ function useRequest<TResult = any, TArgs = {}, TError = any>(
   // );
 
   const send = (args: TArgs, reset: boolean = false) => {
-    const { url, request } = factory(args);
+    const { url, request, mock } = factory(args);
     loading.value = true;
 
     if (reset) {
       error.value = null;
       result.value = null;
+    }
+
+    if (USE_MOCK) {
+      if (mock == null) return;
+
+      mock()
+        .then(mockResult => {
+          result.value = mockResult;
+          error.value = null;
+        })
+        .catch(mockError => {
+          error.value = mockError;
+          result.value = null;
+        })
+        .finally(() => {
+          if (after) after(result.value, error.value);
+          loading.value = false;
+        });
+
+      return;
     }
 
     fetch(url, request)
@@ -66,4 +103,4 @@ function useRequest<TResult = any, TArgs = {}, TError = any>(
   return { loading: loading.value, result: result.value, error: error.value, send };
 }
 
-export { useRequest, RequestFactory };
+export { useRequest, RequestFactory, HTTPError };

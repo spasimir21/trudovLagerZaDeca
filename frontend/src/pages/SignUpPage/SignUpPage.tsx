@@ -18,6 +18,7 @@ import corn from '../../assets/corn.png';
 import tomatoes from '../../assets/tomatoes.png';
 import { useRequest } from '../../api/useRequest';
 import { RegisterRequest } from '../../api/RegisterRequest';
+import { SignUpModal } from '../../components/SignUpModal/SignUpModal';
 
 function formatNumber(number: number, length: number) {
   const str = number.toString();
@@ -30,8 +31,10 @@ function formatDate(date: Date) {
 
 function SignUpPage() {
   const tokenData = useReducer(APIStateContext, getTokenDataReducer);
-  const setTokens = useAction(APIStateContext, loginAction);
+  const setTokens = useAction(APIStateContext, loginAction as any);
   const navigate = useNavigate();
+
+  const [showModal, setShowModal] = useState(false);
 
   const [camp, setCamp] = useState('0');
   const [name, setName] = useState('');
@@ -48,14 +51,14 @@ function SignUpPage() {
     }
 
     setTokens(result[0], result[1]);
-    navigate('/');
+    setShowModal(true);
   });
 
   const signupButtonCallback = () => {
     if (loading) return;
 
     if (tokenData != null) {
-      navigate('/');
+      setShowModal(true);
       return;
     }
 
@@ -64,8 +67,12 @@ function SignUpPage() {
 
   return (
     <div className='page'>
+      {showModal && <SignUpModal />}
       <HeaderSpacing />
-      <div className={classes.signupContainer} style={{ backgroundImage: `url('${tokenData == null ? corn : tomatoes}')` }}>
+      <div
+        className={classes.signupContainer}
+        style={{ backgroundImage: `url('${tokenData == null ? corn : tomatoes}')` }}
+      >
         <div className={classes.signupForm}>
           <p className={classes.signupTitle}>Записване за лагер</p>
           <div className={classes.field}>
@@ -95,7 +102,12 @@ function SignUpPage() {
               </div>
               <div className={classes.field}>
                 <p>Парола</p>
-                <input type='password' placeholder='Парола' value={password} onInput={(e: any) => setPassword(e.target.value)} />
+                <input
+                  type='password'
+                  placeholder='Парола'
+                  value={password}
+                  onInput={(e: any) => setPassword(e.target.value)}
+                />
               </div>
               <div className={classes.fieldRow}>
                 <div className={classes.field} style={{ width: '50%' }}>
